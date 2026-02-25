@@ -26,7 +26,7 @@ By mikeyww in U.S.A. • For [AutoHotkey](https://autohotkey.com/) version 2.0.2
 
 ## Related sites
 
-[GitHub](https://github.com/mikeyww/TagPhotos/) | [AutoHotkey](https://www.autohotkey.com/boards/) | [MajorGeeks](https://www.majorgeeks.com/files/details/TagPhotos.html) | [SourceForge](https://sourceforge.net/projects/TagPhotos/)
+[GitHub](https://github.com/mikeyww/TagPhotos/) | [AutoHotkey](https://www.autohotkey.com/boards/) | [MajorGeeks](https://www.majorgeeks.com/files/details/TagPhotos.html) | [SourceForge](https://sourceforge.net/projects/TagPhotos/) | [ExifTool](https://exiftool.org/)
 
 ## License
 
