@@ -20,14 +20,14 @@ https://www.autohotkey.com/boards/
 */
 #Requires AutoHotkey 2
 ITEM           := Map(                                                            ; Menu-bar items
-                     'File'   , [1, '&File `tF2'   , select ]
-                   , 'Date'   , [2, '&Date `tF3'   , addDate]
-                   , 'Update' , [3, '&Update `tF4' , write  ]
-                   , 'Refresh', [4, '&Refresh `tF5', read   ]
-                   , 'Prev'   , [5, '&Prev `tPgUp' , nav    ]
-                   , 'Next'   , [6, '&Next `tPgDn' , nav    ]
-                   , 'Help'   , [7, '&Help `tF1' , helpShow ]
-                   , 'About'  , [8, '&About'       , about  ]
+                     'File'   , [1, '&File `tF2'   , select  ]
+                   , 'Date'   , [2, '&Date `tF3'   , addDate ]
+                   , 'Update' , [3, '&Update `tF4' , write   ]
+                   , 'Refresh', [4, '&Refresh `tF5', read    ]
+                   , 'Prev'   , [5, '&Prev `tPgUp' , nav     ]
+                   , 'Next'   , [6, '&Next `tPgDn' , nav     ]
+                   , 'Help'   , [7, '&Help `tF1'   , helpShow]
+                   , 'About'  , [8, '&About'       , about   ]
                   )
 OUT            := 'tag.txt'
 CRLF           := '`r`n'
@@ -116,8 +116,8 @@ select(itemName?, itemPos?, m?) {  ; F2 = Select photos to update
  global selected, g, tab, picPath, desc, created
  If !(sel := FileSelect('M' FILEMUSTEXIST,, SCRIPT ' - Select JPG image files', 'JPG image files (*.jpg)')).Length
   Return
- selected := sel
  Try g.Destroy
+ ((selected := sel).Length > 1) && g2.Show()
  g := Gui(, GUITITLE)
  g.SetFont 's10'
  g.MenuBar := MenuBar()
@@ -126,14 +126,13 @@ select(itemName?, itemPos?, m?) {  ; F2 = Select photos to update
    g.MenuBar.Add ITEM[i][2], ITEM[i][3]
  tab := g.AddTab3('-Background -Wrap Buttons')                                       ; Create tab control
  status.Text := ''
- (selected.Length > 1) && g2.Show()
  For k, image in selected {                                                          ; Add one photo per new tab
   status.Text := 'Loading #' k ' of ' selected.Length
   prog.Value  := 100 * k / selected.Length
   SplitPath(image,,,, &fnBare), tab.Add([SubStr(fnBare, 1, TABLEN)])                 ; Use shortened file name as new tab's name
   tab.UseTab(k), g.AddPic('h-1 Section w' PICWIDTH, image)                           ; Add a photo to the new tab
  }
- g2.Hide(), tab.UseTab()                                                             ; Use no tab for subsequent controls
+ tab.UseTab                                                                          ; Use no tab for subsequent controls
  g.AddText 'x+m ys w' WIDTH, 'File:'
    picPath := g.AddEdit('wp ReadOnly')                                               ; Path to photo file
  g.AddText 'wp', 'Description:'
@@ -141,7 +140,7 @@ select(itemName?, itemPos?, m?) {  ; F2 = Select photos to update
  g.AddText 'y+12', 'Created:'
    created := g.AddEdit('x+m yp-4 w100 ReadOnly')                                    ; Date photo was created
  tab.OnEvent('Change', (tb, info) => read()), desc.OnEvent('Change', desc_Change)    ; When tab or description changes
- g.OnEvent('Escape', (gui) => ExitApp()), read(), g.Show()
+ g.OnEvent('Escape', (gui) => ExitApp()), read(), g2.Hide(), g.Show()
 }
 
 addDate(itemName, itemPos, m) {                              ; F3 = Append photo creation date to description
