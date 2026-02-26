@@ -24,6 +24,8 @@ By mikeyww in U.S.A. • For [AutoHotkey](https://autohotkey.com/) version 2.0.2
 
 [For Windows x64](https://github.com/mikeyww/TagPhotos/releases)
 
+The installer provides a portable main program of less than 1 MB, along with ExifTool and its accompanying files to write metadata.
+
 ## Related sites
 
 [GitHub](https://github.com/mikeyww/TagPhotos/) | [AutoHotkey](https://www.autohotkey.com/boards/) | [MajorGeeks](https://www.majorgeeks.com/) | [SourceForge](https://sourceforge.net/) | [ExifTool](https://exiftool.org/)
