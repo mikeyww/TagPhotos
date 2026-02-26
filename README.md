@@ -28,7 +28,7 @@ The installer provides a portable main program of less than 1 MB, along with Exi
 
 ## Related sites
 
-[GitHub](https://github.com/mikeyww/TagPhotos/) | [AutoHotkey](https://www.autohotkey.com/boards/) | [MajorGeeks](https://www.majorgeeks.com/) | [SourceForge](https://sourceforge.net/) | [ExifTool](https://exiftool.org/)
+[GitHub](https://github.com/mikeyww/TagPhotos/) | [AutoHotkey](https://www.autohotkey.com/boards/viewtopic.php?f=83&t=140233) | [MajorGeeks](https://www.majorgeeks.com/) | [SourceForge](https://sourceforge.net/projects/tagphotos/) | [ExifTool](https://exiftool.org/)
 
 ## License
 
