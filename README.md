@@ -9,6 +9,7 @@ TagPhotos is a simple photograph description tagger for JPG files.
 - Select multiple photos to tag in sequence
 - See a preview of each photo alongside its description tag
 - The main program consists of one portable file of less than 1 MB
+- When writing metadata, ExifTool preserves the original file by copying it and adding "\_original" to the original file's name.
 
 By mikeyww in U.S.A. • For [AutoHotkey](https://autohotkey.com/) version 2.0.20
 
